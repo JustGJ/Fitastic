@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import OnBoardingStack from './src/navigations/OnBoardingStack';
 
-function App() {
+const App = () => {
   return (
-    <View>
-      <Text>Fitastic</Text>
-    </View>
+    <NavigationContainer>
+      <OnBoardingStack />
+    </NavigationContainer>
   );
-}
+};
 
 export default App;
