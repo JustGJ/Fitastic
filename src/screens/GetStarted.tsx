@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { getStarted } from 'styles';
 import TitleApp from 'components/TitleApp';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
-import BackgroundImage from 'components/ImageBackground';
+import BackgroundImage from 'components/Backgroundimage';
 
 interface GetStartedProps {
   navigation: NavigationProp<ParamListBase>;
