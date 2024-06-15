@@ -1,5 +1,5 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import GetStarted from 'screens/GetStarted';
 import SignIn from 'screens/SignIn';
 
@@ -10,12 +10,12 @@ const OnBoardingStack = () => (
     <Stack.Screen
       name="GetStarted"
       component={GetStarted}
-      options={{headerShown: false}}
+      options={{ headerShown: false }}
     />
     <Stack.Screen
       name="SignIn"
       component={SignIn}
-      options={{headerShown: false}}
+      options={{ headerShown: false }}
     />
   </Stack.Navigator>
 );

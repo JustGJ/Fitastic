@@ -6,6 +6,7 @@
     "start:ios": "npx react-native run-ios --simulator=\"iPhone 15\"",
     "start:android": "react-native start --port 8082 & npx react-native run-android",
     "lint": "eslint .",
+    "prettier": "prettier --write .",
     "start": "react-native start",
     "test": "jest",
     "prepare": "husky"
