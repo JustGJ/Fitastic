@@ -1,11 +1,27 @@
-import React from 'react';
-import {Text, View} from 'react-native';
+import React, { useEffect } from 'react';
+import { getStarted } from 'styles';
+import TitleApp from 'components/TitleApp';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
+import BackgroundImage from 'components/Backgroundimage';
 
-const GetStarted = () => {
+interface GetStartedProps {
+  navigation: NavigationProp<ParamListBase>;
+}
+const imageSource = require('../assets/images/started-bg.jpg');
+
+const GetStarted = ({ navigation }: GetStartedProps) => {
+  const { navigate } = navigation;
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate('SignIn');
+    }, 2000);
+  }, []);
+
   return (
-    <View>
-      <Text>GetStarted</Text>
-    </View>
+    <BackgroundImage source={imageSource} overlay>
+      <TitleApp containerStyles={getStarted.titleApp} />
+    </BackgroundImage>
   );
 };
 
