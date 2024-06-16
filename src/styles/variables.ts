@@ -1,6 +1,8 @@
 // colors
 export const Colors = {
+  white: '#ffffff',
   whiteSmoke: '#f5f5f5',
+  greyLight: '#f0f0f0',
   blueAzur: '#1c9ef3',
   black: '#000000',
   black_opacity_02: 'rgba(0, 0, 0, 0.2)',

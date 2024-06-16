@@ -7,7 +7,7 @@ import BackgroundImage from 'components/Backgroundimage';
 interface GetStartedProps {
   navigation: NavigationProp<ParamListBase>;
 }
-const imageSource = require('../assets/images/started-bg.jpg');
+const imageSource = require('assets/images/started-bg.jpg');
 
 const GetStarted = ({ navigation }: GetStartedProps) => {
   const { navigate } = navigation;
