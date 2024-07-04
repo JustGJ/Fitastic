@@ -1,51 +1,68 @@
-import { Colors, fontExtraBold, FontSizes } from 'styles/variables';
 import { StyleSheet } from 'react-native';
+import {
+  BorderRadius,
+  Colors,
+  FontSizes,
+  FontWeightExtraBold,
+  FontWeightMedium,
+  Margin,
+  Padding,
+} from './variables';
 
-// screens styles
+// ======== SCREENS ========
 export const getStarted = StyleSheet.create({
   titleApp: {
     flex: 1,
     position: 'absolute',
-    bottom: 120,
     alignSelf: 'center',
+    bottom: 120,
   },
 });
 
 export const signIn = StyleSheet.create({
-  titleApp: {
+  container: {
+    flex: 1,
     marginTop: 70,
   },
-  customButton: {
-    width: '85%',
+  button: {
     marginVertical: 6,
     alignSelf: 'center',
-    paddingLeft: 20,
+    paddingLeft: Padding.medium,
   },
-  customButtonText: {
-    marginLeft: 20,
+  buttonText: {
+    marginLeft: Padding.medium,
     marginRight: 'auto',
   },
-  text: {
+  orContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: Margin.large,
+  },
+  orText: {
     color: Colors.white,
-    textAlign: 'center',
-    marginVertical: 25,
     fontSize: FontSizes.medium,
-    textDecorationLine: 'underline',
+    marginHorizontal: Margin.small,
   },
 });
 
-// components styles
-export const titleApp = StyleSheet.create({
-  title: {
-    fontSize: FontSizes.xxLarge,
-    fontWeight: fontExtraBold,
-    textAlign: 'center',
-    color: Colors.blueAzur,
+export const signUp = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 70,
   },
-  description: {
-    fontSize: FontSizes.large,
-    textAlign: 'center',
-    color: Colors.whiteSmoke,
+  buttonContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: Margin.large,
+  },
+});
+
+// ======== COMPONENTS ========
+export const onBoardingContainer = StyleSheet.create({
+  titleApp: {
+    marginTop: 70,
   },
 });
 
@@ -55,12 +72,12 @@ export const backgroundImage = StyleSheet.create({
   },
 });
 
-export const customButton = StyleSheet.create({
+export const buttonText = StyleSheet.create({
   button: {
-    height: 50,
     width: '100%',
-    marginTop: 10,
-    borderRadius: 10,
+    height: 50,
+    marginTop: Margin.small,
+    borderRadius: BorderRadius.small,
     borderWidth: 2,
   },
   rounded: {
@@ -73,11 +90,11 @@ export const customButton = StyleSheet.create({
     height: '100%',
   },
   buttonText: {
-    fontSize: 16,
-    fontWeight: '500',
+    fontSize: FontSizes.medium,
+    fontWeight: FontWeightMedium,
   },
   shadow: {
-    shadowColor: '#000',
+    shadowColor: Colors.black,
     shadowOffset: {
       width: 3,
       height: 2,
@@ -85,5 +102,65 @@ export const customButton = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 3,
     elevation: 4,
+  },
+});
+
+export const inputText = StyleSheet.create({
+  wrapper: {
+    marginVertical: Margin.small,
+  },
+  container: {
+    flexDirection: 'row',
+    height: 40,
+    padding: Padding.small,
+    alignItems: 'center',
+    borderColor: Colors.whiteSmoke,
+    borderWidth: 1,
+    borderRadius: BorderRadius.small,
+  },
+  label: {
+    fontWeight: FontWeightMedium,
+    marginBottom: Margin.small,
+  },
+  leftIcon: {
+    marginRight: Margin.small,
+  },
+  input: {
+    flex: 1,
+  },
+  rightIcon: {
+    marginLeft: Margin.small,
+  },
+  outlined: {
+    borderWidth: 1,
+    borderRadius: BorderRadius.small,
+  },
+  standard: {
+    borderWidth: 0,
+    borderBottomWidth: 1,
+  },
+});
+
+export const authFooter = StyleSheet.create({
+  text: {
+    color: Colors.white,
+    fontSize: FontSizes.medium,
+    marginVertical: Margin.medium,
+    textDecorationLine: 'underline',
+    textAlign: 'center',
+  },
+});
+
+export const titleApp = StyleSheet.create({
+  title: {
+    fontSize: FontSizes.xxLarge,
+    fontWeight: FontWeightExtraBold,
+    textAlign: 'center',
+    color: Colors.blueAzur,
+  },
+  description: {
+    fontSize: FontSizes.large,
+    textAlign: 'center',
+    color: Colors.whiteSmoke,
   },
 });

@@ -6,9 +6,9 @@ import {
   StyleProp,
   ViewStyle,
 } from 'react-native';
-import { backgroundImage } from 'styles';
 import { defaultStyles } from 'styles/globals';
 import { Colors } from 'styles/variables';
+import { backgroundImage } from 'styles';
 
 interface BackgroundImageProps extends ImageBackgroundProps {
   overlay?: boolean;

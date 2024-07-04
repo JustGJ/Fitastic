@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react';
 import { getStarted } from 'styles';
 import TitleApp from 'components/TitleApp';
-import { NavigationProp, ParamListBase } from '@react-navigation/native';
-import BackgroundImage from 'components/Backgroundimage';
+import BackgroundImage from 'components/BackgroundImage';
+import { INavigationProps } from 'types/interfaces';
 
-interface GetStartedProps {
-  navigation: NavigationProp<ParamListBase>;
-}
 const imageSource = require('assets/images/started-bg.jpg');
 
-const GetStarted = ({ navigation }: GetStartedProps) => {
+const GetStarted = ({ navigation }: INavigationProps) => {
   const { navigate } = navigation;
 
   useEffect(() => {
