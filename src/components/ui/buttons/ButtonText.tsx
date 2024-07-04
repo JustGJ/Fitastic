@@ -1,9 +1,9 @@
 import React from 'react';
 import { Pressable, StyleProp, Text, View, ViewStyle } from 'react-native';
-import { customButton } from 'styles';
+import { buttonText } from 'styles';
 import { Colors } from 'styles/variables';
 
-interface CustomButtonProps {
+interface IButtonTextProps {
   label?: string;
   labelColor?: string;
   backgroundColor?: string;
@@ -19,7 +19,7 @@ interface CustomButtonProps {
   onPress?: () => void;
 }
 
-const CustomButton = ({
+const Button = ({
   label = '',
   labelColor = Colors.black,
   backgroundColor = Colors.whiteSmoke,
@@ -33,7 +33,7 @@ const CustomButton = ({
   colorPressable,
   disabled = false,
   onPress,
-}: CustomButtonProps) => {
+}: IButtonTextProps) => {
   const pressableStyles = ({ pressed }: { pressed: boolean }) => {
     let bgColor;
     if (disabled) {
@@ -51,19 +51,19 @@ const CustomButton = ({
   return (
     <Pressable
       style={({ pressed }) => [
-        customButton.button,
-        rounded && customButton.rounded,
+        buttonText.button,
+        rounded && buttonText.rounded,
         { backgroundColor, borderColor },
-        raised && customButton.shadow,
+        raised && buttonText.shadow,
         customContainer,
         pressableStyles({ pressed }),
       ]}
       disabled={disabled}
       onPress={onPress}>
-      <View style={customButton.buttonContainer}>
+      <View style={buttonText.buttonContainer}>
         {startIcon}
         <Text
-          style={[customButton.buttonText, customText, { color: labelColor }]}>
+          style={[buttonText.buttonText, customText, { color: labelColor }]}>
           {label}
         </Text>
         {endIcon}
@@ -72,4 +72,4 @@ const CustomButton = ({
   );
 };
 
-export default CustomButton;
+export default Button;
