@@ -1,5 +1,5 @@
 import React from 'react';
-import BackgroundImage from './BackgroundImage';
+import BackgroundImage from './Backgroundimage';
 import TitleApp from './TitleApp';
 import { onBoardingContainer } from 'styles';
 import { defaultStyles } from 'styles/globals';

@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { Colors } from 'styles/variables';
 import { signIn } from 'styles';
 import ButtonText from 'components/ui/buttons/ButtonText';
-import OnBoardingContainer from 'components/OnBoardingContainer';
+import OnBoardingContainer from '../../components/OnBoardingContainer';
 import Divider from 'components/ui/divider';
 import { INavigationProps } from 'types/interfaces';
 import AuthInputs from 'components/auth/AuthInputs';

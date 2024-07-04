@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { getStarted } from 'styles';
 import TitleApp from 'components/TitleApp';
-import BackgroundImage from 'components/BackgroundImage';
 import { INavigationProps } from 'types/interfaces';
+import BackgroundImage from '../components/Backgroundimage';
 
 const imageSource = require('assets/images/started-bg.jpg');
 
