@@ -13,7 +13,7 @@ const GetStarted = ({ navigation }: INavigationProps) => {
     setTimeout(() => {
       navigate('SignIn');
     }, 2000);
-  }, []);
+  }, [navigate]);
 
   return (
     <BackgroundImage source={imageSource} overlay>

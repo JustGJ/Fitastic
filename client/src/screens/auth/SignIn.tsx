@@ -1,29 +1,21 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { Colors } from 'styles/variables';
 import { signIn } from 'styles';
-import ButtonText from 'components/ui/buttons/ButtonText';
 import OnBoardingContainer from '../../components/OnBoardingContainer';
 import Divider from 'components/ui/divider';
-import { INavigationProps } from 'types/interfaces';
-import AuthInputs from 'components/auth/AuthInputs';
 import AuthButtons from 'components/auth/AuthButtons';
 import AuthFooter from 'components/auth/AuthFooter';
+import { INavigationProps } from 'types/interfaces';
+import AuthForm from 'components/auth/AuthForm';
 
 const SignIn = ({ navigation }: INavigationProps) => {
   const handleNavigateToSignUp = () => {
     navigation.navigate('SignUp');
   };
-
   return (
     <OnBoardingContainer description="Ton défie, ta victoire">
       <View style={signIn.container}>
-        <AuthInputs type="signIn" />
-        <ButtonText
-          label="Se connecter"
-          backgroundColor={Colors.blueAzur}
-          colorPressable={Colors.whiteSmoke}
-        />
+        <AuthForm type="signIn" navigation={navigation} />
         <View style={signIn.orContainer}>
           <Divider width="43%" />
           <Text style={signIn.orText}>Ou</Text>
