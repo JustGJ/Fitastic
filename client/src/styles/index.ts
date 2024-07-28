@@ -22,7 +22,7 @@ export const getStarted = StyleSheet.create({
 export const signIn = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 70,
+    marginTop: Margin.xxlarge,
   },
   button: {
     marginVertical: 6,
@@ -49,13 +49,10 @@ export const signIn = StyleSheet.create({
 export const signUp = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 70,
+    marginTop: Margin.xxlarge,
   },
   buttonContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: Margin.large,
+    marginTop: Margin.large,
   },
 });
 

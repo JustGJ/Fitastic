@@ -28,6 +28,7 @@ export const Padding = {
   small: 10,
   medium: 20,
   large: 30,
+  xxlarge: 70,
 };
 
 // margin
@@ -35,6 +36,7 @@ export const Margin = {
   small: 10,
   medium: 20,
   large: 30,
+  xxlarge: 70,
 };
 
 // border-radius
