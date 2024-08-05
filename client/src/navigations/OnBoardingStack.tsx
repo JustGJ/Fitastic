@@ -7,7 +7,7 @@ import SignUp from 'screens/auth/SignUp';
 const Stack = createNativeStackNavigator();
 
 const OnBoardingStack = () => (
-  <Stack.Navigator>
+  <Stack.Navigator screenOptions={{ animation: 'fade' }}>
     <Stack.Screen
       name="GetStarted"
       component={GetStarted}
