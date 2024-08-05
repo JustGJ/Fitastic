@@ -12,12 +12,12 @@ const AppStack = () => (
   <NavigationContainer>
     <Stack.Navigator initialRouteName="Onboarding">
       <Stack.Screen
-        name="Onboarding"
+        name="OnboardingStack"
         component={OnBoardingStack}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Main"
+        name="MainStack"
         component={MainStack}
         options={{ headerShown: false }}
       />

@@ -5,5 +5,6 @@ module.exports = {
     'prettier/prettier': ['error', { bracketSpacing: true }],
     'arrow-body-style': ['error', 'as-needed'],
     'react-hooks/exhaustive-deps': 'warn',
+    'react/no-unstable-nested-components': 'off',
   },
 };

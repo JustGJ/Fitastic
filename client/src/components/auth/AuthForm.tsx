@@ -5,7 +5,7 @@ import ButtonText from 'components/ui/buttons/ButtonText';
 import { signUp } from 'styles';
 import { API_EMAIL, API_PASSWORD } from '@env';
 import { getAuthInputs } from './config/authFormConfig';
-import { INavigationProps } from 'types/interfaces';
+import { INavigationProps } from 'types/navigation';
 
 interface IAuthFormProps extends INavigationProps {
   type: 'signIn' | 'signUp';
@@ -23,7 +23,7 @@ const AuthForm = ({ type, navigation }: IAuthFormProps) => {
 
   const handleSubmitForm = () => {
     if (type === 'signIn' && email === API_EMAIL && password === API_PASSWORD) {
-      navigation.navigate('Main');
+      navigation.navigate('MainStack');
     }
   };
 
