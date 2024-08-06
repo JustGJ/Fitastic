@@ -3,6 +3,7 @@ import {
   BorderRadius,
   Colors,
   FontSizes,
+  FontWeightBold,
   FontWeightExtraBold,
   FontWeightMedium,
   Margin,
@@ -50,9 +51,36 @@ export const signUp = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Margin.xxlarge,
+    textAlign: 'center',
   },
   buttonContainer: {
     marginTop: Margin.large,
+  },
+});
+
+export const sessions = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '85%',
+    textAlign: 'center',
+    marginTop: Margin.xxlarge,
+    marginHorizontal: 'auto',
+  },
+  title: {
+    fontSize: FontSizes.large,
+    fontWeight: FontWeightBold,
+    textAlign: 'center',
+    color: Colors.blueAzur,
+    marginBottom: Margin.small,
+  },
+  description: {
+    fontSize: FontSizes.medium,
+    textAlign: 'center',
+  },
+  button: {
+    position: 'absolute',
+    bottom: 30,
+    right: 0,
   },
 });
 

@@ -5,9 +5,10 @@ export const Colors = {
   greyLight: '#f0f0f0',
   blueAzur: '#1c9ef3',
   black: '#000000',
-  black_opacity_02: 'rgba(0, 0, 0, 0.2)',
-  grey_opacity_06: 'rgba(60, 60, 60, 0.6)',
   white_opacity_07: 'rgba(255, 255, 255, 0.7)',
+  grey_opacity_06: 'rgba(60, 60, 60, 0.6)',
+  blueAzur_opacity_06: 'rgba(28, 158, 243, 0.6)',
+  black_opacity_02: 'rgba(0, 0, 0, 0.2)',
 };
 
 // font sizes
@@ -21,6 +22,7 @@ export const FontSizes = {
 
 // font weights
 export const FontWeightMedium = '500';
+export const FontWeightBold = '600';
 export const FontWeightExtraBold = '700';
 
 // padding
