@@ -5,13 +5,14 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Dashboard from '../screens/Dashboard';
-import { FontSizes } from 'styles/variables';
-import Sessions from '../screens/Sessions';
+import { Colors, FontSizes } from 'styles/variables';
+import SessionsStack from './SessionsStack';
+import Exercices from 'screens/Exercices';
 
 const Tab = createBottomTabNavigator();
 
 const MainStack = () => (
-  <Tab.Navigator>
+  <Tab.Navigator initialRouteName="Séances">
     <Tab.Screen
       name="Tableau de bord"
       component={Dashboard}
@@ -24,33 +25,34 @@ const MainStack = () => (
           <FontAwesome5
             name="user-circle"
             size={FontSizes.xLarge}
-            color="black"
+            color={Colors.black}
           />
         ),
       }}
     />
     <Tab.Screen
       name="Séances"
-      component={Sessions}
+      component={SessionsStack}
       options={{
+        headerShown: false,
         tabBarIcon: () => (
           <SimpleLineIcons
             name="notebook"
             size={FontSizes.xLarge}
-            color="black"
+            color={Colors.black}
           />
         ),
       }}
     />
     <Tab.Screen
       name="Exercices"
-      component={Sessions}
+      component={Exercices}
       options={{
         tabBarIcon: () => (
           <MaterialIcons
             name="fitness-center"
             size={FontSizes.xLarge}
-            color="black"
+            color={Colors.black}
           />
         ),
       }}
