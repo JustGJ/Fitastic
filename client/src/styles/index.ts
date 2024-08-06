@@ -11,7 +11,7 @@ import {
 } from './variables';
 
 // ======== SCREENS ========
-export const getStarted = StyleSheet.create({
+export const splash = StyleSheet.create({
   titleApp: {
     flex: 1,
     position: 'absolute',
