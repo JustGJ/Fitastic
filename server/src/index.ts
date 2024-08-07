@@ -1,41 +1,23 @@
-import { PrismaClient } from "@prisma/client";
+import { ApolloServer } from '@apollo/server';
+import { startStandaloneServer } from '@apollo/server/standalone';
+import resolvers from './resolvers/exercise.resolver';
+import { makeExecutableSchema } from '@graphql-tools/schema';
+import { typeDefs as scalarsTypedefs, resolvers as scalarsResolvers } from 'graphql-scalars';
+import types from './schemas';
 
-const prisma = new PrismaClient();
+const schema = makeExecutableSchema({
+  typeDefs: [types, ... scalarsTypedefs],
+  resolvers: { ...resolvers, ...scalarsResolvers },
+});
 
-async function main() {
-    await prisma.post.update({
-      where: {
-        slug: 'my-first-post',
-      },
-      data: {
-        comments: {
-          createMany: {
-            data: [
-              { comment: 'Great post!' },
-              { comment: "Can't wait to read more!" },
-            ],
-          },
-        },
-      },
-    })
-    const posts = await prisma.post.findMany({
-      include: {
-        comments: true,
-      },
-    })
-  
-    console.dir(posts, { depth: Infinity })
-  }
-    
-main()
-  .then(async (e) => {
-    console.log(e);
-    await prisma.$disconnect();
-  })
-  .catch(async (e) => {
-    console.error(e);
-    await prisma.$disconnect();
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+const server = new ApolloServer({
+  schema,
+  csrfPrevention: true,
+  cache: 'bounded',
+});
+
+const { url } = await startStandaloneServer(server, {
+  listen: { port: 4000 },
+});
+
+console.log(`🚀  Server ready at: ${url}`);

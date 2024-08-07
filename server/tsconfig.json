@@ -1,13 +1,21 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
+    "rootDirs": ["src"],
     "outDir": "dist",
-    "target": "ES2018",
-    "module": "commonjs",
+    "lib": ["es2020"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "types": ["node"],
     "strict": true,
-    "lib": ["esnext"],
-    "esModuleInterop": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["dist"],
-  "include": ["src"]
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

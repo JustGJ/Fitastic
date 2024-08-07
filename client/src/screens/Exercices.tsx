@@ -1,16 +1,11 @@
 import { Text, View } from 'react-native';
 import React, { useEffect } from 'react';
-import { useQuery } from 'react-query';
-import { getExercises } from 'business/api/exercice';
+import { useExercices } from 'business/api/exercice';
 import { useExerciceStore } from 'business/store/exerciceStore';
 
 const Exercices = () => {
   const { exercices, setExercices } = useExerciceStore();
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ['exercices'],
-    queryFn: getExercises,
-  });
-
+  const { data, isLoading, isError } = useExercices();
   console.log('🚀 ~ Exercices ~ exercices:', exercices);
 
   useEffect(() => {
@@ -27,7 +22,9 @@ const Exercices = () => {
   }
   return (
     <View>
-      <Text>Exercices</Text>
+      {exercices.map((exercice: { id: string; name: string }) => (
+        <Text key={exercice.id}>{exercice.name}</Text>
+      ))}
     </View>
   );
 };
