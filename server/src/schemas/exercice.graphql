@@ -1,0 +1,22 @@
+# Définition des types
+type Exercise {
+  id: ID!
+  name: String!
+  bodyPart: String!
+  equipment: String!
+  gifUrl: String!
+  target: String!
+  secondaryMuscles: [String]!
+  instructions: [String]!
+}
+
+# Définition des requêtes
+type Query {
+  exercises: [Exercise]
+  exercise(id: ID!): Exercise
+}
+
+# Schéma principal
+schema {
+  query: Query
+}
