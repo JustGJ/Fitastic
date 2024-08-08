@@ -54,8 +54,10 @@ const Input = ({
   };
 
   return (
-    <View style={inputText.wrapper}>
-      <Text style={[inputText.label, { color: labelColor }]}>{label}</Text>
+    <View>
+      {label && (
+        <Text style={[inputText.label, { color: labelColor }]}>{label}</Text>
+      )}
       <View
         style={[
           inputText.container,

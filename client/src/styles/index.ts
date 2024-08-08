@@ -131,9 +131,9 @@ export const buttonText = StyleSheet.create({
 });
 
 export const inputText = StyleSheet.create({
-  wrapper: {
-    marginVertical: Margin.small,
-  },
+  // wrapper: {
+  //   marginVertical: Margin.small,
+  // },
   container: {
     flexDirection: 'row',
     height: 40,
@@ -142,10 +142,11 @@ export const inputText = StyleSheet.create({
     borderColor: Colors.whiteSmoke,
     borderWidth: 1,
     borderRadius: BorderRadius.small,
+    // marginVertical: Margin.small,
   },
   label: {
     fontWeight: FontWeightMedium,
-    marginBottom: Margin.small,
+    // marginBottom: Margin.small,
   },
   leftIcon: {
     marginRight: Margin.small,
