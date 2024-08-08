@@ -45,9 +45,12 @@ const MainStack = () => (
       }}
     />
     <Tab.Screen
-      name="Exercices"
+      name="Mes exercices"
       component={Exercices}
       options={{
+        headerStyle: {
+          shadowOpacity: 0,
+        },
         tabBarIcon: () => (
           <MaterialIcons
             name="fitness-center"

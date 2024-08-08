@@ -5,10 +5,9 @@ export const GET_EXERCICES = gql`
     exercises {
       id
       name
-      bodyPart
+      target
       instructions
-      secondaryMuscles
-      gifUrl
+      imageUrl
     }
   }
 `;

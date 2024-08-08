@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import AuthStack from 'navigations/AuthStack';
+import AuthStack from 'navigations/AuthStack';
 import MainStack from 'navigations/MainStack';
 import ProfileStack from 'navigations/ProfileStack';
 import Splash from 'screens/Splash';
@@ -21,11 +21,11 @@ const AppNavigation = () => (
         component={Splash}
         options={{ headerShown: false }}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="AuthStack"
         component={AuthStack}
         options={{ headerShown: false }}
-      /> */}
+      />
       <Stack.Screen
         name="Profile"
         component={ProfileStack}
