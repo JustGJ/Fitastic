@@ -1,13 +1,11 @@
-import { PrismaClient } from "@prisma/client";
+import { Resolvers } from '../../types';
 
-const prisma = new PrismaClient();
-
-const resolvers = {
-    Query: {
-      exercises: async () => {
-        return await prisma.exercise.findMany();
-      },
+const resolvers: Resolvers = {
+  Query: {
+    exercises: async (_, args, { prisma }) => {
+      return await prisma.exercise.findMany();
     },
-  };
+  },
+};
 
-  export default resolvers;
+export default resolvers;
