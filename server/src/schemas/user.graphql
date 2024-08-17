@@ -34,3 +34,7 @@ type Measurement {
   value: Float!
   date: DateTime!
 }
+
+schema {
+  mutation: Mutation
+}

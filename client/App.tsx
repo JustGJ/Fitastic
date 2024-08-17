@@ -1,20 +1,18 @@
-import { QueryClient, QueryClientProvider } from 'react-query';
 import AppNavigation from './AppNavigation';
 import React from 'react';
 import { ApolloProvider } from '@apollo/client';
 import { AppRegistry } from 'react-native';
-import client from 'business/graphql/client';
-
-const queryClient = new QueryClient();
+import client from 'graphql/client';
+import { AuthProvider } from 'contexts/AuthContext';
 
 const App = () => (
   <ApolloProvider client={client}>
-    <QueryClientProvider client={queryClient}>
+    <AuthProvider>
       <AppNavigation />
-    </QueryClientProvider>
+    </AuthProvider>
   </ApolloProvider>
 );
 
 export default App;
 
-AppRegistry.registerComponent('MyApplication', () => App);
+AppRegistry.registerComponent('Fitastic', () => App);

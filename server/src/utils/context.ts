@@ -23,9 +23,10 @@ const extractToken = (authorization: string): string | null => {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const context = async ({ req }: any) => {
+  console.log('🚀 ~ context ~ req:', req);
   const { operationName } = req.body;
 
-  if (operationName === 'SignIn' || operationName === 'SignUp' || operationName === 'IntrospectionQuery') {
+  if (operationName === 'signIn' || operationName === 'SignUp' || operationName === 'IntrospectionQuery') {
     return { prisma };
   }
 

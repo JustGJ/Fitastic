@@ -2,7 +2,7 @@ import React from 'react';
 import AuthContainer from 'components/OnBoardingContainer';
 import { View } from 'react-native';
 import { signUp } from 'styles';
-import { INavigationProps } from 'types/navigation';
+import { INavigationProps } from 'types';
 import AuthFooter from 'components/auth/AuthFooter';
 import AuthForm from 'components/auth/AuthForm';
 

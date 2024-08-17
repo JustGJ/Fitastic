@@ -1,46 +1,55 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FlatList, Text, View } from 'react-native';
-import { useExercices } from 'business/api/exercice';
-import { useExerciceStore } from 'business/store/exerciceStore';
 import InputText from 'components/ui/inputs/InputText';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { Colors } from 'styles/variables';
 import ExercisesByTarget from 'components/exercices/ExercisesByTarget';
+import { useQuery } from '@apollo/client';
+import { GET_EXERCICES } from 'graphql/exercices';
+import { Exercise } from 'types';
+import { useAuth } from 'contexts/AuthContext';
+import { exercises } from 'styles';
 
-// Définissez une interface pour l'exercice
-interface Exercice {
-  id: string;
-  name: string;
-  target: string;
-  gifUrl: string;
-  [key: string]: any; // Optionnel: si vous avez d'autres propriétés non spécifiées
-}
-
-// Définissez une interface pour le stockage des exercices groupés par cible
 interface ExercisesByTargetProps {
-  [key: string]: Exercice[];
+  [key: string]: Exercise[];
 }
 
 const Exercices = () => {
-  const { exercices, setExercices } = useExerciceStore();
-  const { data, isLoading, isError } = useExercices();
+  const { token } = useAuth();
+  const [searchTextInput, setSearchTextInput] = useState('');
+  const [filteredExercises, setFilteredExercises] = useState<Exercise[]>([]);
+  const { data, loading, error } = useQuery(GET_EXERCICES, {
+    context: {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    },
+  });
 
   useEffect(() => {
-    if (data) {
-      setExercices(data);
+    if (data && data.exercises) {
+      setFilteredExercises(data.exercises);
     }
   }, [data]);
 
-  if (isLoading) {
+  useEffect(() => {
+    if (data && data.exercises) {
+      const filtered = data.exercises.filter((exercise: Exercise) =>
+        exercise.name.toLowerCase().includes(searchTextInput.toLowerCase()),
+      );
+      setFilteredExercises(filtered);
+    }
+  }, [searchTextInput, data]);
+
+  if (loading) {
     return <Text>Loading...</Text>;
   }
-  if (isError) {
+  if (error) {
     return <Text>Error</Text>;
   }
 
-  // Utilisez les types définis pour les exercices et les exercices par cible
-  const exercisesByTarget: ExercisesByTargetProps = exercices.reduce(
-    (acc: ExercisesByTargetProps, exercise: Exercice) => {
+  const exercisesByTarget: ExercisesByTargetProps = filteredExercises.reduce(
+    (acc: ExercisesByTargetProps, exercise: Exercise) => {
       const { target } = exercise;
       if (!acc[target]) {
         acc[target] = [];
@@ -52,13 +61,15 @@ const Exercices = () => {
   );
 
   return (
-    <View style={{ backgroundColor: 'white' }}>
+    <View style={exercises.container}>
       <InputText
         leftIcon={<EvilIcons name="search" size={20} color={Colors.black} />}
         rightIcon={<EvilIcons name="close" size={20} color={Colors.black} />}
         textColor={Colors.black}
         placeholder="Rechercher un exercice"
         borderBottomColor={Colors.greyLight}
+        value={searchTextInput}
+        onChangeText={setSearchTextInput}
       />
       <FlatList
         data={Object.keys(exercisesByTarget)}
@@ -70,12 +81,7 @@ const Exercices = () => {
             exercises={exercisesByTarget[target]}
           />
         )}
-        contentContainerStyle={{
-          backgroundColor: 'white',
-          paddingHorizontal: 15,
-          paddingBottom: 20,
-          height: '100%',
-        }}
+        contentContainerStyle={exercises.content}
       />
     </View>
   );

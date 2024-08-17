@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { splash } from 'styles';
 import TitleApp from 'components/TitleApp';
-import { INavigationProps } from 'types/navigation';
+import { INavigationProps } from 'types';
 import BackgroundImage from '../components/Backgroundimage';
 
 const imageSource = require('assets/images/started-bg.jpg');

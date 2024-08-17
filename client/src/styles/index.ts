@@ -84,6 +84,50 @@ export const sessions = StyleSheet.create({
   },
 });
 
+export const exercises = StyleSheet.create({
+  container: {
+    backgroundColor: Colors.white,
+  },
+  title: {
+    fontSize: FontSizes.large,
+    fontWeight: FontWeightBold,
+    textAlign: 'center',
+    color: Colors.blueAzur,
+    marginBottom: Margin.small,
+  },
+  content: {
+    backgroundColor: Colors.white,
+    paddingBottom: Padding.medium,
+    paddingHorizontal: 15,
+    height: '100%',
+  },
+});
+
+export const exercisesByTarget = StyleSheet.create({
+  targetTitle: {
+    fontSize: 20,
+    fontWeight: FontWeightBold,
+    color: Colors.blueAzur,
+    marginVertical: Margin.small,
+  },
+  exerciseItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: Padding.small,
+  },
+  exerciseImage: {
+    width: 50,
+    height: 50,
+    borderRadius: BorderRadius.rounded,
+    backgroundColor: Colors.greyLight,
+  },
+  exerciseText: {
+    marginLeft: Margin.small,
+    fontSize: FontSizes.medium,
+    color: Colors.black,
+  },
+});
+
 // ======== COMPONENTS ========
 export const onBoardingContainer = StyleSheet.create({
   titleApp: {

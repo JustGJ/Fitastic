@@ -3,9 +3,11 @@ import Input from 'components/ui/inputs/InputText';
 import { Colors } from 'styles/variables';
 import ButtonText from 'components/ui/buttons/ButtonText';
 import { signUp } from 'styles';
-import { API_EMAIL, API_PASSWORD } from '@env';
 import { getAuthInputs } from './config/authFormConfig';
-import { INavigationProps } from 'types/navigation';
+import { INavigationProps } from 'types';
+import { useMutation } from '@apollo/client';
+import { SIGNIN } from 'graphql/auth';
+import { useAuth } from 'contexts/AuthContext';
 
 interface IAuthFormProps extends INavigationProps {
   type: 'signIn' | 'signUp';
@@ -16,14 +18,21 @@ const AuthForm = ({ type, navigation }: IAuthFormProps) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [signIn] = useMutation(SIGNIN);
+  const { setAuthData } = useAuth();
+
   const labelButtonText =
     type === 'signUp' ? 'Créer un compte' : 'Se connecter';
 
   const customContainerStyle = type === 'signUp' && signUp.buttonContainer;
 
-  const handleSubmitForm = () => {
-    if (type === 'signIn' && email === API_EMAIL && password === API_PASSWORD) {
-      navigation.navigate('MainStack');
+  const handleSubmitForm = async () => {
+    if (type === 'signIn') {
+      const response = await signIn({ variables: { email, password } });
+      if (response.data?.signIn?.token) {
+        setAuthData(response.data.signIn.token, response.data.signIn.user);
+        navigation.navigate('MainStack');
+      }
     }
   };
 

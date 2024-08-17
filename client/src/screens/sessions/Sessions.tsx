@@ -4,7 +4,7 @@ import { sessions } from 'styles';
 import ButtonIcon from 'components/ui/buttons/ButtonIcon';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors } from 'styles/variables';
-import { INavigationProps } from 'types/navigation';
+import { INavigationProps } from 'types';
 
 const Sessions = ({ navigation }: INavigationProps) => (
   <View style={sessions.container}>

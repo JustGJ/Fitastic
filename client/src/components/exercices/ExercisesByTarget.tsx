@@ -1,39 +1,26 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
+import { exercisesByTarget } from 'styles';
+import { Exercise } from 'types';
 
-interface IExercisesByTargetProps {
+interface ExercisesByTargetProps {
   target: string;
-  exercises: Exercice[];
+  exercises: Exercise[];
 }
 
-// Définissez une interface pour l'exercice
-interface Exercice {
-  id: string;
-  name: string;
-  target: string;
-  gifUrl: string;
-  [key: string]: any; // Optionnel: si vous avez d'autres propriétés non spécifiées
-}
-
-const ExercisesByTarget = ({ target, exercises }: IExercisesByTargetProps) => (
+const ExercisesByTarget = ({ target, exercises }: ExercisesByTargetProps) => (
   <View>
-    <Text style={{ fontSize: 20, fontWeight: 'bold', marginVertical: 10 }}>
-      {target}
-    </Text>
-    {exercises.map((exercice: Exercice) => (
-      <View
+    <Text style={exercisesByTarget.targetTitle}>{target}</Text>
+    {exercises.map((exercice: Exercise) => (
+      <TouchableOpacity
         key={exercice.id}
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginVertical: 10,
-        }}>
+        style={exercisesByTarget.exerciseItem}>
         <Image
           source={{ uri: exercice.gifUrl }}
-          style={{ width: 30, height: 30 }}
+          style={exercisesByTarget.exerciseImage}
         />
-        <Text style={{ marginLeft: 10 }}>{exercice.name}</Text>
-      </View>
+        <Text style={exercisesByTarget.exerciseText}>{exercice.name}</Text>
+      </TouchableOpacity>
     ))}
   </View>
 );

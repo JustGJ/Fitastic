@@ -5,7 +5,7 @@ import OnBoardingContainer from '../../components/OnBoardingContainer';
 import Divider from 'components/ui/divider';
 import AuthButtons from 'components/auth/AuthButtons';
 import AuthFooter from 'components/auth/AuthFooter';
-import { INavigationProps } from 'types/navigation';
+import { INavigationProps } from 'types';
 import AuthForm from 'components/auth/AuthForm';
 
 const SignIn = ({ navigation }: INavigationProps) => {
