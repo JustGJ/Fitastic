@@ -1,27 +1,16 @@
 import React from 'react';
-import AuthContainer from 'components/OnBoardingContainer';
+import AuthContainer from 'components/auth/AuthContainer';
 import { View } from 'react-native';
 import { signUp } from 'styles';
-import { INavigationProps } from 'types';
-import AuthFooter from 'components/auth/AuthFooter';
+import { NavigationProps } from 'types';
 import AuthForm from 'components/auth/AuthForm';
 
-const SignUp = ({ navigation }: INavigationProps) => {
-  const handleNavigateToSignIn = () => {
-    navigation.navigate('SignIn');
-  };
-
-  return (
-    <AuthContainer description="Créer un compte">
-      <View style={signUp.container}>
-        <AuthForm type="signUp" navigation={navigation} />
-      </View>
-      <AuthFooter
-        onPress={handleNavigateToSignIn}
-        text="Déjà un compte ? Connectez-vous"
-      />
-    </AuthContainer>
-  );
-};
+const SignUp = ({ navigation }: NavigationProps) => (
+  <AuthContainer type="signUp" navigation={navigation}>
+    <View style={signUp.container}>
+      <AuthForm type="signUp" navigation={navigation} />
+    </View>
+  </AuthContainer>
+);
 
 export default SignUp;

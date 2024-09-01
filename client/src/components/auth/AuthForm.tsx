@@ -1,28 +1,25 @@
 import React, { useState } from 'react';
-import Input from 'components/ui/inputs/InputText';
+import InputText from 'components/ui/inputs/InputText';
 import { Colors } from 'styles/variables';
 import ButtonText from 'components/ui/buttons/ButtonText';
 import { signUp } from 'styles';
 import { getAuthInputs } from './config/authFormConfig';
-import { INavigationProps } from 'types';
+import { NavigationProps } from 'types';
 import { useMutation } from '@apollo/client';
 import { SIGNIN } from 'graphql/auth';
 import { useAuth } from 'contexts/AuthContext';
 
-interface IAuthFormProps extends INavigationProps {
+interface AuthFormProps extends NavigationProps {
   type: 'signIn' | 'signUp';
 }
 
-const AuthForm = ({ type, navigation }: IAuthFormProps) => {
+const AuthForm = ({ type, navigation }: AuthFormProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [signIn] = useMutation(SIGNIN);
   const { setAuthData } = useAuth();
-
-  const labelButtonText =
-    type === 'signUp' ? 'Créer un compte' : 'Se connecter';
 
   const customContainerStyle = type === 'signUp' && signUp.buttonContainer;
 
@@ -69,7 +66,7 @@ const AuthForm = ({ type, navigation }: IAuthFormProps) => {
   return (
     <>
       {inputs.map(input => (
-        <Input
+        <InputText
           key={input.id}
           bgColor={input.bgColor}
           secure={input.secureTextEntry}
@@ -84,7 +81,7 @@ const AuthForm = ({ type, navigation }: IAuthFormProps) => {
       ))}
       <ButtonText
         customContainer={customContainerStyle}
-        label={labelButtonText}
+        label={`screens.auth.${type}.formButton`}
         backgroundColor={Colors.blueAzur}
         colorPressable={Colors.whiteSmoke}
         onPress={handleSubmitForm}

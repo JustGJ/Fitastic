@@ -88,12 +88,26 @@ export const exercises = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
   },
+  targetContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: Padding.small,
+  },
   title: {
     fontSize: FontSizes.large,
-    fontWeight: FontWeightBold,
-    textAlign: 'center',
-    color: Colors.blueAzur,
-    marginBottom: Margin.small,
+    fontWeight: FontWeightMedium,
+    marginLeft: Margin.large,
+    color: 'black',
+  },
+  imageContainer: {
+    width: 50,
+    height: 50,
+  },
+  targetImage: {
+    width: 50,
+    height: 50,
+    borderRadius: BorderRadius.rounded,
   },
   content: {
     backgroundColor: Colors.white,
@@ -126,10 +140,122 @@ export const exercisesByTarget = StyleSheet.create({
     fontSize: FontSizes.medium,
     color: Colors.black,
   },
+  chevron: {
+    position: 'absolute',
+    right: 0,
+  },
+});
+
+export const exercisesDetails = StyleSheet.create({
+  container: {
+    backgroundColor: Colors.white,
+    padding: Padding.medium,
+  },
+  videoContainer: {
+    borderWidth: 1,
+    borderColor: Colors.greyLight,
+    borderRadius: BorderRadius.rounded,
+    height: 400,
+    marginBottom: Margin.small,
+  },
+  video: {
+    width: '100%',
+    height: '100%',
+  },
+  name: {
+    fontSize: FontSizes.large,
+    fontWeight: FontWeightBold,
+    color: Colors.black,
+    marginBottom: Margin.small,
+  },
+  description: {
+    fontSize: FontSizes.medium,
+    textAlign: 'center',
+  },
+  imageContainer: {
+    width: 50,
+    height: 50,
+  },
+  targetImage: {
+    width: 50,
+    height: 50,
+    borderRadius: BorderRadius.rounded,
+  },
+  sectionContainer: {
+    borderRadius: 6,
+    elevation: 3,
+    backgroundColor: Colors.greyLight,
+    paddingLeft: Padding.small,
+    paddingRight: Padding.large,
+    paddingVertical: Padding.medium,
+  },
+  sectionTitle: {
+    fontSize: FontSizes.medium,
+    fontWeight: FontWeightMedium,
+    marginVertical: Margin.small,
+  },
+  listItem: {
+    flexDirection: 'row',
+    marginBottom: Margin.medium,
+  },
+  itemNumber: {
+    borderRadius: BorderRadius.rounded,
+    fontWeight: FontWeightMedium,
+    textAlign: 'center',
+    marginRight: Margin.small,
+  },
+});
+
+export const createSession = StyleSheet.create({
+  note: {
+    flexDirection: 'row',
+    marginTop: Margin.small,
+  },
+  noteText: {
+    fontSize: FontSizes.small,
+    marginBottom: Margin.medium,
+    color: Colors.blueAzur,
+    fontWeight: FontWeightBold,
+    marginLeft: 4,
+  },
+});
+
+export const modalExercises = StyleSheet.create({
+  modalView: {
+    height: '100%',
+    width: '100%',
+    paddingTop: 60,
+    backgroundColor: 'white',
+    alignItems: 'center',
+  },
+  header: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: Margin.small,
+  },
+  title: {
+    fontSize: FontSizes.medium,
+    fontWeight: FontWeightBold,
+    textAlign: 'center',
+  },
+  buttonOpen: {
+    backgroundColor: '#F194FF',
+  },
+  buttonClose: {
+    position: 'absolute',
+    left: 5,
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
 
 // ======== COMPONENTS ========
-export const onBoardingContainer = StyleSheet.create({
+export const authContainer = StyleSheet.create({
   titleApp: {
     marginTop: 70,
   },
@@ -186,11 +312,11 @@ export const inputText = StyleSheet.create({
     borderColor: Colors.whiteSmoke,
     borderWidth: 1,
     borderRadius: BorderRadius.small,
-    // marginVertical: Margin.small,
+    marginVertical: Margin.small,
   },
   label: {
     fontWeight: FontWeightMedium,
-    // marginBottom: Margin.small,
+    marginBottom: Margin.small,
   },
   leftIcon: {
     marginRight: Margin.small,
@@ -232,5 +358,33 @@ export const titleApp = StyleSheet.create({
     fontSize: FontSizes.large,
     textAlign: 'center',
     color: Colors.whiteSmoke,
+  },
+});
+
+export const dashboardHeader = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: Padding.small,
+    paddingTop: 50,
+    backgroundColor: Colors.white,
+    borderBottomWidth: 1,
+    borderBottomColor: '#e4e5e5',
+  },
+  profileImage: {
+    width: 40,
+    height: 40,
+    borderRadius: 25,
+    overflow: 'hidden',
+  },
+  welcome: {
+    fontSize: FontSizes.medium,
+    fontWeight: FontWeightBold,
+    marginRight: Margin.small,
+  },
+  notifications: {
+    position: 'absolute',
+    bottom: 10,
+    right: 20,
   },
 });

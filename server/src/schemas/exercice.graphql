@@ -3,7 +3,9 @@ type Exercise {
   id: ID!
   name: String!
   target: String!
+  description: String
   instructions: [String]!
+  advices: [String]!
   imageUrl: String!
 }
 

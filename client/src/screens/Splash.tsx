@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { splash } from 'styles';
 import TitleApp from 'components/TitleApp';
-import { INavigationProps } from 'types';
+import { NavigationProps } from 'types';
 import BackgroundImage from '../components/Backgroundimage';
 
 const imageSource = require('assets/images/started-bg.jpg');
 
-const Splash = ({ navigation }: INavigationProps) => {
+const Splash = ({ navigation }: NavigationProps) => {
   const { navigate } = navigation;
 
   useEffect(() => {

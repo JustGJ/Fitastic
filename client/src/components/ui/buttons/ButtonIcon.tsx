@@ -11,6 +11,8 @@ interface IButtonIconProps {
   colorPressable?: string;
   customContainer?: StyleProp<ViewStyle>;
   disabled?: boolean;
+  padding?: number;
+  customStyles?: StyleProp<ViewStyle>;
   onPress?: () => void;
 }
 
@@ -23,6 +25,8 @@ const ButtonIcon = ({
   colorPressable,
   customContainer,
   disabled = false,
+  padding = 10,
+  customStyles,
   onPress,
 }: IButtonIconProps) => {
   const pressableStyles = ({ pressed }: { pressed: boolean }) => {
@@ -40,7 +44,7 @@ const ButtonIcon = ({
         borderColor,
         borderRadius: rounded ? 50 : 0,
         borderWidth: borderColor ? 1 : 0,
-        padding: 10,
+        padding,
       },
       raised && {
         shadowColor: '#000',
@@ -49,6 +53,7 @@ const ButtonIcon = ({
         shadowRadius: 2,
         elevation: 2,
       },
+      customStyles,
       customContainer,
     ];
   };

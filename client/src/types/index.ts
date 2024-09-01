@@ -11,11 +11,12 @@ export interface AuthData {
   user: User | null;
 }
 
-export interface INavigationProps {
+export interface NavigationProps {
   navigation: NavigationProp<ParamListBase>;
 }
 
 export interface Exercise {
+  imageUrl: string | undefined;
   id: string;
   name: string;
   target: string;

@@ -21,7 +21,7 @@ export const authButtons = [
   {
     id: 20,
     backgroundColor: Colors.white,
-    label: 'Se connecter avec Google',
+    label: 'screens.auth.signIn.signInWithGoogle',
     labelColor: Colors.black,
     colorPressable: Colors.whiteSmoke,
     icon: (
@@ -32,7 +32,7 @@ export const authButtons = [
   {
     id: 21,
     backgroundColor: Colors.black,
-    label: 'Se connecter avec Apple',
+    label: 'screens.auth.signIn.signInWithApple',
     labelColor: Colors.white,
     colorPressable: Colors.whiteSmoke,
     icon: (
@@ -43,7 +43,7 @@ export const authButtons = [
   {
     id: 22,
     backgroundColor: Colors.blueAzur,
-    label: 'Se connecter avec Facebook',
+    label: 'screens.auth.signIn.signInWithFacebook',
     labelColor: Colors.white,
     colorPressable: Colors.whiteSmoke,
     icon: (

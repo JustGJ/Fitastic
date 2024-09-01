@@ -49,7 +49,9 @@ model Exercise {
   id               String            @id @default(auto()) @map("_id") @db.ObjectId
   name             String
   target           String
+  description     String
   instructions     String[]
+  advices          String[]
   imageUrl         String
   sessionExercises SessionExercise[]
 }

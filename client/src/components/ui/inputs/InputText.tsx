@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Text, TextInput, View } from 'react-native';
 import { inputText } from 'styles';
 import { Colors } from 'styles/variables';
@@ -43,10 +44,13 @@ const Input = ({
   borderBottomColor = Colors.white_opacity_07,
   borderColor = Colors.white_opacity_07,
 }: IInputProps) => {
+  const { t } = useTranslation();
+
   const containerBorder = outlined ? inputText.outlined : inputText.standard;
+
   const getPlaceholder = () => {
     if (placeholder) {
-      return placeholder;
+      return t(placeholder);
     } else if (label) {
       return `Entrer ${label}`;
     }
@@ -56,7 +60,7 @@ const Input = ({
   return (
     <View>
       {label && (
-        <Text style={[inputText.label, { color: labelColor }]}>{label}</Text>
+        <Text style={[inputText.label, { color: labelColor }]}>{t(label)}</Text>
       )}
       <View
         style={[

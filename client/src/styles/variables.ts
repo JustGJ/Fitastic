@@ -3,6 +3,8 @@ export const Colors = {
   white: '#ffffff',
   whiteSmoke: '#f5f5f5',
   greyLight: '#f0f0f0',
+  blueAzurLight: '#cfeafc',
+  orange: '#ff9900',
   blueAzur: '#1c9ef3',
   black: '#000000',
   white_opacity_07: 'rgba(255, 255, 255, 0.7)',

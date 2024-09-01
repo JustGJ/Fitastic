@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Pressable, StyleProp, Text, View, ViewStyle } from 'react-native';
 import { buttonText } from 'styles';
 import { Colors } from 'styles/variables';
@@ -34,6 +35,8 @@ const Button = ({
   disabled = false,
   onPress,
 }: IButtonTextProps) => {
+  const { t } = useTranslation();
+
   const pressableStyles = ({ pressed }: { pressed: boolean }) => {
     let bgColor;
     if (disabled) {
@@ -64,7 +67,7 @@ const Button = ({
         {startIcon}
         <Text
           style={[buttonText.buttonText, customText, { color: labelColor }]}>
-          {label}
+          {t(label)}
         </Text>
         {endIcon}
       </View>
