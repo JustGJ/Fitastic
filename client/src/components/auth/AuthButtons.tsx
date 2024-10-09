@@ -1,7 +1,7 @@
 import React from 'react';
 import ButtonText from 'components/ui/buttons/ButtonText';
-import { signIn } from 'styles';
 import { authButtons } from './config/authButtonsConfig';
+import { login } from 'styles';
 
 const AuthButtons = () => (
   <>
@@ -14,8 +14,8 @@ const AuthButtons = () => (
         startIcon={btn.icon}
         backgroundColor={btn.backgroundColor}
         onPress={btn.handlePress}
-        customContainer={signIn.button}
-        customText={signIn.buttonText}
+        customContainer={login.button}
+        customText={login.buttonText}
       />
     ))}
   </>

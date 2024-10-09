@@ -1,11 +1,5 @@
 import React, { ReactNode } from 'react';
-import {
-  ImageBackground,
-  View,
-  ImageBackgroundProps,
-  StyleProp,
-  ViewStyle,
-} from 'react-native';
+import { ImageBackground, View, ImageBackgroundProps, StyleProp, ViewStyle } from 'react-native';
 import { defaultStyles } from 'styles/globals';
 import { Colors } from 'styles/variables';
 import { backgroundImage } from 'styles';
@@ -24,16 +18,9 @@ const BackgroundImage = ({
   source,
 }: BackgroundImageProps) => {
   const showOverlay = () =>
-    overlay && (
-      <View
-        style={[backgroundImage.overlay, { backgroundColor: overlayColor }]}
-      />
-    );
+    overlay && <View style={[backgroundImage.overlay, { backgroundColor: overlayColor }]} />;
   return (
-    <ImageBackground
-      source={source}
-      resizeMode="cover"
-      style={defaultStyles.container}>
+    <ImageBackground source={source} resizeMode="cover" style={defaultStyles.container}>
       {showOverlay()}
       {children}
     </ImageBackground>

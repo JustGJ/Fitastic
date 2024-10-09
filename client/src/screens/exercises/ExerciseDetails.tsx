@@ -35,9 +35,7 @@ const Section = ({ title, data }: { title: string; data: string[] }) => {
       <Text
         style={{
           ...exercisesDetails.sectionTitle,
-          ...(isAdviceSection
-            ? defaultStyles.orangeColor
-            : defaultStyles.blueAzurColor),
+          ...(isAdviceSection ? defaultStyles.orangeColor : defaultStyles.blueAzurColor),
         }}>
         {t(title)}
       </Text>
@@ -47,9 +45,7 @@ const Section = ({ title, data }: { title: string; data: string[] }) => {
             <Text
               style={{
                 ...exercisesDetails.itemNumber,
-                ...(isAdviceSection
-                  ? defaultStyles.orangeColor
-                  : defaultStyles.blueAzurColor),
+                ...(isAdviceSection ? defaultStyles.orangeColor : defaultStyles.blueAzurColor),
               }}>
               {index + 1}.
             </Text>
@@ -69,12 +65,7 @@ const ExerciseDetails = ({ route }: ExerciseDetailsProps) => {
   return (
     <ScrollView style={exercisesDetails.container}>
       <View style={exercisesDetails.videoContainer}>
-        <Video
-          repeat
-          source={videoSource}
-          style={exercisesDetails.video}
-          controls={false}
-        />
+        <Video repeat source={videoSource} style={exercisesDetails.video} controls={false} />
       </View>
       <Text style={exercisesDetails.name}>{t(name)}</Text>
       <Text>{t(description)}</Text>

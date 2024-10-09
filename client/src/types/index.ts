@@ -16,9 +16,12 @@ export interface NavigationProps {
 }
 
 export interface Exercise {
-  imageUrl: string | undefined;
-  id: string;
+  userId?: string;
   name: string;
   target: string;
-  gifUrl: string;
+  image: string;
+  description: string;
+  instructions: string[];
+  advices: string[];
+  video: string;
 }

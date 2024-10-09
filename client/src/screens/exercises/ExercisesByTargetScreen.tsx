@@ -1,22 +1,9 @@
 import React from 'react';
-import {
-  View,
-  FlatList,
-  Text,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import { View, FlatList, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { Exercise, NavigationProps } from 'types';
 import Feather from 'react-native-vector-icons/Feather';
-import {
-  BorderRadius,
-  Colors,
-  FontSizes,
-  Margin,
-  Padding,
-} from 'styles/variables';
+import { BorderRadius, Colors, FontSizes, Margin, Padding } from 'styles/variables';
 import { useTranslation } from 'react-i18next';
 
 const ExercisesByTargetScreen = ({ navigation }: NavigationProps) => {
@@ -31,15 +18,12 @@ const ExercisesByTargetScreen = ({ navigation }: NavigationProps) => {
     <View style={styles.container}>
       <FlatList
         data={exercisesByTarget[target]}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.name}
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.exerciseItem}
-            onPress={() => navigation.navigate('ExerciseDetail', { item })}>
-            <Image
-              source={{ uri: item.imageUrl }}
-              style={styles.exerciseImage}
-            />
+            onPress={() => navigation.navigate('ExerciseDetails', { item })}>
+            <Image source={{ uri: item.image }} style={styles.exerciseImage} />
             <Text style={styles.exerciseText}>{t(item.name)}</Text>
             <Feather
               style={styles.chevron}

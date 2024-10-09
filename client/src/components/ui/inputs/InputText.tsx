@@ -59,9 +59,7 @@ const Input = ({
 
   return (
     <View>
-      {label && (
-        <Text style={[inputText.label, { color: labelColor }]}>{t(label)}</Text>
-      )}
+      {label && <Text style={[inputText.label, { color: labelColor }]}>{t(label)}</Text>}
       <View
         style={[
           inputText.container,
@@ -81,9 +79,7 @@ const Input = ({
         />
         {rightIcon && <View style={inputText.rightIcon}>{rightIcon}</View>}
       </View>
-      {errorMessage && (
-        <Text style={{ color: errorColor }}>{errorMessage}</Text>
-      )}
+      {errorMessage && <Text style={{ color: errorColor }}>{errorMessage}</Text>}
     </View>
   );
 };

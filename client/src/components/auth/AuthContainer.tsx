@@ -8,34 +8,24 @@ import { NavigationProps } from 'types';
 
 const imageSource = require('assets/images/started-bg.jpg');
 
-interface ISignInContainerProps extends NavigationProps {
+interface LoginContainerProps extends NavigationProps {
   children: React.ReactNode;
   type: string;
 }
 
-const AuthContainer = ({
-  children,
-  type,
-  navigation,
-}: ISignInContainerProps) => {
-  const handleNavigateToSignInOrUp = () => {
-    const destination = type === 'signIn' ? 'SignUp' : 'SignIn';
+const AuthContainer = ({ children, type, navigation }: LoginContainerProps) => {
+  const handleNavigateToLoginOrRegister = () => {
+    const destination = type === 'login' ? 'Register' : 'Login';
     navigation.navigate(destination);
   };
   return (
-    <BackgroundImage
-      style={defaultStyles.container}
-      source={imageSource}
-      overlay>
+    <BackgroundImage style={defaultStyles.container} source={imageSource} overlay>
       <TitleApp
         containerStyles={authContainer.titleApp}
         description={`screens.auth.${type}.title`}
       />
       {children}
-      <AuthFooter
-        onPress={handleNavigateToSignInOrUp}
-        text={`screens.auth.${type}.footer`}
-      />
+      <AuthFooter onPress={handleNavigateToLoginOrRegister} text={`screens.auth.${type}.footer`} />
     </BackgroundImage>
   );
 };

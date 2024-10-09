@@ -10,11 +10,7 @@ interface IInputsConnection {
   type: string;
 }
 
-export const getAuthInputs = ({
-  showPassword,
-  handleShowPassword,
-  type,
-}: IInputsConnection) => [
+export const getAuthInputs = ({ showPassword, handleShowPassword, type }: IInputsConnection) => [
   {
     id: 5,
     key: 'email',
@@ -22,14 +18,8 @@ export const getAuthInputs = ({
     placeholder: `screens.auth.${type}.email`,
     labelColor: Colors.white,
     bgColor: Colors.grey_opacity_06,
-    leftIcon: (
-      <FontAwesome
-        name="envelope"
-        size={FontSizes.medium}
-        color={Colors.white}
-      />
-    ),
-    type: ['signIn', 'signUp'],
+    leftIcon: <FontAwesome name="envelope" size={FontSizes.medium} color={Colors.white} />,
+    type: ['login', 'register'],
   },
   {
     id: 6,
@@ -39,27 +29,18 @@ export const getAuthInputs = ({
     secureTextEntry: !showPassword,
     bgColor: Colors.grey_opacity_06,
     labelColor: Colors.white,
-    leftIcon: (
-      <FontAwesome name="lock" size={FontSizes.medium} color={Colors.white} />
-    ),
-    rightIcon: (
-      <ShowPassword
-        handleShowPassword={handleShowPassword}
-        showPassword={showPassword}
-      />
-    ),
-    type: ['signIn', 'signUp'],
+    leftIcon: <FontAwesome name="lock" size={FontSizes.medium} color={Colors.white} />,
+    rightIcon: <ShowPassword handleShowPassword={handleShowPassword} showPassword={showPassword} />,
+    type: ['login', 'register'],
   },
   {
     id: 7,
     key: 'confirmPassword',
-    label: 'screens.auth.signUp.confirmPassword',
-    placeholder: 'screens.auth.signUp.confirmPassword',
+    label: 'screens.auth.register.confirmPassword',
+    placeholder: 'screens.auth.register.confirmPassword',
     bgColor: Colors.grey_opacity_06,
     labelColor: Colors.white,
-    leftIcon: (
-      <FontAwesome name="lock" size={FontSizes.medium} color={Colors.white} />
-    ),
+    leftIcon: <FontAwesome name="lock" size={FontSizes.medium} color={Colors.white} />,
     rightIcon: (
       <Pressable onPress={handleShowPassword}>
         <FontAwesome
@@ -69,6 +50,6 @@ export const getAuthInputs = ({
         />
       </Pressable>
     ),
-    type: ['signUp'],
+    type: ['register'],
   },
 ];

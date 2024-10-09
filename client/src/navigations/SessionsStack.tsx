@@ -7,11 +7,7 @@ const Stack = createNativeStackNavigator();
 
 const SessionsStack = () => (
   <Stack.Navigator>
-    <Stack.Screen
-      name="Sessions"
-      component={Sessions}
-      options={{ headerTitle: 'Séances' }}
-    />
+    <Stack.Screen name="Sessions" component={Sessions} options={{ headerTitle: 'Séances' }} />
     <Stack.Screen
       name="CreateSession"
       component={CreateSession}

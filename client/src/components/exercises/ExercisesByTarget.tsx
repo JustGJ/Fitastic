@@ -11,26 +11,17 @@ interface ExercisesByTargetProps extends NavigationProps {
   exercises: Exercise[];
 }
 
-const ExercisesByTarget = ({
-  target,
-  exercises,
-  navigation,
-}: ExercisesByTargetProps) => {
+const ExercisesByTarget = ({ target, exercises, navigation }: ExercisesByTargetProps) => {
   const { t } = useTranslation();
   return (
     <View>
       <Text style={exercisesByTarget.targetTitle}>{target}</Text>
       {exercises.map((exercice: Exercise) => (
         <TouchableOpacity
-          onPress={() =>
-            navigation.navigate('ExerciseDetail', { id: exercice.id })
-          }
-          key={exercice.id}
+          onPress={() => navigation.navigate('ExerciseDetail', { id: exercice.name })}
+          key={exercice.name}
           style={exercisesByTarget.exerciseItem}>
-          <Image
-            source={{ uri: exercice.gifUrl }}
-            style={exercisesByTarget.exerciseImage}
-          />
+          <Image source={{ uri: exercice.image }} style={exercisesByTarget.exerciseImage} />
           <Text style={exercisesByTarget.exerciseText}>{t(exercice.name)}</Text>
           <Feather
             style={exercisesByTarget.chevron}

@@ -8,10 +8,7 @@ interface IShowPasswordProps {
   showPassword: boolean;
 }
 
-const ShowPassword = ({
-  handleShowPassword,
-  showPassword,
-}: IShowPasswordProps) => (
+const ShowPassword = ({ handleShowPassword, showPassword }: IShowPasswordProps) => (
   <Pressable onPress={handleShowPassword}>
     <FontAwesome
       name={showPassword ? 'eye' : 'eye-slash'}

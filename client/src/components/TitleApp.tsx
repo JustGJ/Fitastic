@@ -8,10 +8,7 @@ interface TitleAppProps {
   description?: string;
 }
 
-const TitleApp = ({
-  containerStyles,
-  description = 'Ton défie, ta victore',
-}: TitleAppProps) => {
+const TitleApp = ({ containerStyles, description = 'Ton défie, ta victore' }: TitleAppProps) => {
   const { t } = useTranslation();
   return (
     <View style={containerStyles}>

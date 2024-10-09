@@ -17,11 +17,7 @@ export const LinearGradientBackground = ({
   start = { x: 0, y: 0 },
   end = { x: 0, y: 1 },
 }: LinearGradientBackgroundProps) => (
-  <LinearGradient
-    colors={colors}
-    style={styles.gradient}
-    start={start}
-    end={end}>
+  <LinearGradient colors={colors} style={styles.gradient} start={start} end={end}>
     <View style={defaultStyles.container}>{children}</View>
   </LinearGradient>
 );

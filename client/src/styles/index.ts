@@ -20,7 +20,7 @@ export const splash = StyleSheet.create({
   },
 });
 
-export const signIn = StyleSheet.create({
+export const login = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Margin.xxlarge,
@@ -47,7 +47,7 @@ export const signIn = StyleSheet.create({
   },
 });
 
-export const signUp = StyleSheet.create({
+export const register = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: Margin.xxlarge,

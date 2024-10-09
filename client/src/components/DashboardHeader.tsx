@@ -1,4 +1,4 @@
-import { useAuth } from 'contexts/AuthContext';
+import { useAuthContext } from 'contexts/AuthContext';
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { dashboardHeader } from 'styles';
@@ -7,25 +7,16 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ButtonIcon from './ui/buttons/ButtonIcon';
 
 const DashboardHeader = () => {
-  const { currentUser } = useAuth();
+  const { currentUser } = useAuthContext();
 
   const renderImageProfileUser = () => {
     const source = require('assets/images/user-profile.jpg');
-    return (
-      <Image
-        resizeMode="cover"
-        source={source}
-        style={dashboardHeader.profileImage}
-      />
-    );
+    return <Image resizeMode="cover" source={source} style={dashboardHeader.profileImage} />;
   };
 
   return (
     <View style={dashboardHeader.container}>
-      <ButtonIcon
-        backgroundColor="transparent"
-        icon={renderImageProfileUser()}
-      />
+      <ButtonIcon backgroundColor="transparent" icon={renderImageProfileUser()} />
       <Text style={dashboardHeader.welcome}>Salut {currentUser?.name} 👋</Text>
       <ButtonIcon
         customStyles={dashboardHeader.notifications}

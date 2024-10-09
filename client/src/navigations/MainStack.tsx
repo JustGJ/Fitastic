@@ -17,9 +17,7 @@ const MainStack = () => (
       name="Tableau de bord"
       component={Dashboard}
       options={{
-        tabBarIcon: () => (
-          <AntDesign name="home" size={FontSizes.xLarge} color={Colors.black} />
-        ),
+        tabBarIcon: () => <AntDesign name="home" size={FontSizes.xLarge} color={Colors.black} />,
         header: () => <DashboardHeader />,
       }}
     />
@@ -29,11 +27,7 @@ const MainStack = () => (
       options={{
         headerShown: false,
         tabBarIcon: () => (
-          <SimpleLineIcons
-            name="notebook"
-            size={FontSizes.xLarge}
-            color={Colors.black}
-          />
+          <SimpleLineIcons name="notebook" size={FontSizes.xLarge} color={Colors.black} />
         ),
       }}
     />
@@ -43,11 +37,7 @@ const MainStack = () => (
       options={{
         headerShown: false,
         tabBarIcon: () => (
-          <MaterialIcons
-            name="fitness-center"
-            size={FontSizes.xLarge}
-            color={Colors.black}
-          />
+          <MaterialIcons name="fitness-center" size={FontSizes.xLarge} color={Colors.black} />
         ),
       }}
     />

@@ -15,12 +15,7 @@ const Divider = ({
   color = Colors.whiteSmoke,
   dividerStyle,
 }: DividerProps) => {
-  const dividerStyles = [
-    { width },
-    { height },
-    { backgroundColor: color },
-    dividerStyle,
-  ];
+  const dividerStyles = [{ width }, { height }, { backgroundColor: color }, dividerStyle];
 
   return <View style={dividerStyles} />;
 };

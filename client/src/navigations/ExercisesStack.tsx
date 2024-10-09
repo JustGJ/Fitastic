@@ -14,12 +14,12 @@ const ExercisesStack = () => (
       options={{ headerTitle: 'Mes exercices' }}
     />
     <Stack.Screen
-      name="ExercisesByTargetScreen"
+      name="ExercisesByTarget"
       component={ExercisesByTargetScreen}
       options={{ headerTitle: 'Exercices par cible' }}
     />
     <Stack.Screen
-      name="ExerciseDetail"
+      name="ExerciseDetails"
       component={ExerciseDetails}
       options={{ headerTitle: "Détail de l'exercice" }}
     />

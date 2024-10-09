@@ -65,10 +65,7 @@ const Button = ({
       onPress={onPress}>
       <View style={buttonText.buttonContainer}>
         {startIcon}
-        <Text
-          style={[buttonText.buttonText, customText, { color: labelColor }]}>
-          {t(label)}
-        </Text>
+        <Text style={[buttonText.buttonText, customText, { color: labelColor }]}>{t(label)}</Text>
         {endIcon}
       </View>
     </Pressable>

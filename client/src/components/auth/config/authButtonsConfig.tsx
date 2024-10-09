@@ -21,38 +21,28 @@ export const authButtons = [
   {
     id: 20,
     backgroundColor: Colors.white,
-    label: 'screens.auth.signIn.signInWithGoogle',
+    label: 'screens.auth.login.withGoogle',
     labelColor: Colors.black,
     colorPressable: Colors.whiteSmoke,
-    icon: (
-      <FontAwesome name="google" size={FontSizes.xLarge} color={Colors.black} />
-    ),
+    icon: <FontAwesome name="google" size={FontSizes.xLarge} color={Colors.black} />,
     handlePress: () => handleLoginPress('google'),
   },
   {
     id: 21,
     backgroundColor: Colors.black,
-    label: 'screens.auth.signIn.signInWithApple',
+    label: 'screens.auth.login.withApple',
     labelColor: Colors.white,
     colorPressable: Colors.whiteSmoke,
-    icon: (
-      <FontAwesome name="apple" size={FontSizes.xLarge} color={Colors.white} />
-    ),
+    icon: <FontAwesome name="apple" size={FontSizes.xLarge} color={Colors.white} />,
     handlePress: () => handleLoginPress('apple'),
   },
   {
     id: 22,
     backgroundColor: Colors.blueAzur,
-    label: 'screens.auth.signIn.signInWithFacebook',
+    label: 'screens.auth.login.withFacebook',
     labelColor: Colors.white,
     colorPressable: Colors.whiteSmoke,
-    icon: (
-      <FontAwesome
-        name="facebook"
-        size={FontSizes.xLarge}
-        color={Colors.white}
-      />
-    ),
+    icon: <FontAwesome name="facebook" size={FontSizes.xLarge} color={Colors.white} />,
     handlePress: () => handleLoginPress('facebook'),
   },
 ];

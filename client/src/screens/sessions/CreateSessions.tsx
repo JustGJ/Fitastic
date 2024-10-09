@@ -29,20 +29,10 @@ const CreateSession = ({ navigation }: NavigationProps) => {
         placeholder="Ex : pull / push, jambes, cardio ..."
         borderBottomColor={Colors.black}
         textColor={Colors.black}
-        leftIcon={
-          <SimpleLineIcons
-            name="notebook"
-            size={FontSizes.small}
-            color={Colors.black}
-          />
-        }
+        leftIcon={<SimpleLineIcons name="notebook" size={FontSizes.small} color={Colors.black} />}
       />
       <View style={createSession.note}>
-        <Entypo
-          name="info-with-circle"
-          size={FontSizes.large}
-          color={Colors.blueAzur}
-        />
+        <Entypo name="info-with-circle" size={FontSizes.large} color={Colors.blueAzur} />
         <Image source={image} style={styles.image} />
         <Text style={createSession.noteText}>
           Une séance est un enchaînement d'exercices précis.
@@ -54,9 +44,7 @@ const CreateSession = ({ navigation }: NavigationProps) => {
         backgroundColor={Colors.blueAzur}
         labelColor={Colors.white}
         customText={{ marginLeft: 10 }}
-        startIcon={
-          <Ionicons name="add-circle-outline" size={24} color={Colors.white} />
-        }
+        startIcon={<Ionicons name="add-circle-outline" size={24} color={Colors.white} />}
       />
       <Modal animationType="slide" transparent={true} visible={showModal}>
         <View style={modalExercises.modalView}>

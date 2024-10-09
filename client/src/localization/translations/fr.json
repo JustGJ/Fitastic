@@ -2,19 +2,19 @@
     "language": "French",
     "screens": {
       "auth": {
-        "signIn": {
+        "login": {
           "title": "Ton défie, ta victoire",
           "email": "Email",
           "password": "Mot de passe",
           "formButton": "Se connecter",
           "forgotPassword": "Mot de passe oublié?",
           "or": "Ou",
-          "signInWithGoogle": "Se connecter avec Google",
-          "signInWithApple": "Se connecter avec Apple",
-          "signInWithFacebook": "Se connecter avec Facebook",
+          "withGoogle": "Se connecter avec Google",
+          "withApple": "Se connecter avec Apple",
+          "withFacebook": "Se connecter avec Facebook",
           "footer": "Besoin d'un compte ? Inscrivez-vous"
         },
-        "signUp": {
+        "register": {
           "title": "Créer un compte",
           "email": "Entrez votre email*",
           "password": "Entrez votre mot de passe*",
