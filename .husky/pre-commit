@@ -1,5 +1,2 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-cd client && yarn lint && cd ..
-cd server && yarn lint && cd ..
+yarn test
+yarn lint
