@@ -6,8 +6,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Colors, FontSizes } from 'styles/variables';
 import { LinearGradientBackground } from 'components/LinearGradientBackground';
 import { useTranslation } from 'react-i18next';
-import { NavigationProps } from 'types/routes';
 import Entypo from 'react-native-vector-icons/Entypo';
+import { NavigationProps } from 'types';
 
 const SessionsScreen = ({ navigation }: NavigationProps) => {
   const { t } = useTranslation();

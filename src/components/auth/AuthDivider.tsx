@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native';
 import React from 'react';
-import Divider from 'components/ui/divider';
+import Divider from 'components/ui/Divider';
 import { useTranslation } from 'react-i18next';
 import { authDivider } from 'styles';
 

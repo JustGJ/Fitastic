@@ -88,12 +88,6 @@ export const exercises = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
   },
-  content: {
-    backgroundColor: Colors.white,
-    paddingBottom: Padding.medium,
-    paddingHorizontal: 15,
-    height: '100%',
-  },
 });
 
 export const exercisesByTarget = StyleSheet.create({
@@ -144,40 +138,6 @@ export const exercisesDetails = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: BorderRadius.rounded,
-  },
-});
-
-export const modalExercises = StyleSheet.create({
-  modalView: {
-    height: '100%',
-    width: '100%',
-    paddingTop: 60,
-    backgroundColor: 'white',
-    alignItems: 'center',
-  },
-  header: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: Margin.small,
-  },
-  title: {
-    fontSize: FontSizes.medium,
-    fontWeight: FontWeightBold,
-    textAlign: 'center',
-  },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
-  buttonClose: {
-    position: 'absolute',
-    left: 5,
-  },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
 });
 
@@ -410,6 +370,15 @@ export const exerciseDetailsSection = StyleSheet.create({
   },
 });
 
+export const exercisesList = StyleSheet.create({
+  content: {
+    backgroundColor: Colors.white,
+    paddingBottom: Padding.medium,
+    paddingHorizontal: 15,
+    height: '100%',
+  },
+});
+
 export const exerciseListItem = StyleSheet.create({
   container: {
     display: 'flex',
@@ -427,10 +396,15 @@ export const exerciseListItem = StyleSheet.create({
     borderRadius: BorderRadius.rounded,
   },
   title: {
+    flex: 1,
     fontSize: FontSizes.large,
     fontWeight: FontWeightMedium,
     marginLeft: Margin.large,
     color: Colors.black,
+  },
+  checkBox: {
+    width: 20,
+    height: 20,
   },
 });
 
@@ -438,6 +412,7 @@ export const card = StyleSheet.create({
   container: {
     borderRadius: 15,
     padding: 15,
+    marginBottom: 15,
     shadowColor: 'rgba(0, 0, 0, 0.6)',
     shadowOffset: {
       width: 0,
@@ -447,5 +422,41 @@ export const card = StyleSheet.create({
     shadowRadius: 1.6,
     elevation: 2,
     backgroundColor: Colors.white,
+  },
+});
+
+export const exercisesListButtonActions = StyleSheet.create({
+  buttonsContainer: {
+    position: 'absolute',
+    bottom: 130,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    width: '100%',
+  },
+  buttonContainer: {
+    width: '40%',
+    paddingHorizontal: 10,
+  },
+});
+
+export const customModal = StyleSheet.create({
+  view: {
+    paddingTop: 60,
+    backgroundColor: Colors.white,
+  },
+  header: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: Margin.small,
+  },
+  title: {
+    fontSize: FontSizes.medium,
+    fontWeight: FontWeightBold,
+    textAlign: 'center',
+  },
+  buttonClose: {
+    position: 'absolute',
+    left: 5,
   },
 });

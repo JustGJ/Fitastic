@@ -4,17 +4,25 @@ import { useUserExercises } from 'hooks/useUserExercises';
 import { useTranslation } from 'react-i18next';
 import ExerciseListItem from './ExerciseListItem';
 import { Exercise } from 'types';
-import InputSearch from './InputSearch';
-import { exercises } from 'styles';
+import InputSearch from '../InputSearch';
 import { NavigationProps } from 'types';
+import { exercisesList } from 'styles';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ExercisesList = ({ navigation }: NavigationProps) => {
-  const [searchTextInput, setSearchTextInput] = useState('');
+interface IExercisesListProps extends NavigationProps {
+  origin: 'createSession' | 'exercises';
+  exercisesSelected?: string[];
+  setExercisesSelected?: React.Dispatch<React.SetStateAction<string[]>>;
+  setShowExercisesList?: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  <InputSearch value={searchTextInput} onChangeText={setSearchTextInput} />;
-
+const ExercisesList = ({
+  navigation,
+  exercisesSelected,
+  setExercisesSelected,
+  origin,
+}: IExercisesListProps) => {
   const { data } = useUserExercises();
+  const [searchTextInput, setSearchTextInput] = useState('');
   const { t } = useTranslation();
 
   const listData = useMemo(
@@ -26,9 +34,13 @@ const ExercisesList = ({ navigation }: NavigationProps) => {
   );
 
   const renderItem: ListRenderItem<Exercise> = ({ item }) => (
-    <ExerciseListItem item={item} onPress={() => console.log('press')} />
-
-    // <ListItem item={item} onPress={() => handlePress(item)} />
+    <ExerciseListItem
+      exercisesSelected={exercisesSelected}
+      setExercisesSelected={setExercisesSelected}
+      item={item}
+      origin={origin}
+      navigation={navigation}
+    />
   );
 
   return (
@@ -37,7 +49,7 @@ const ExercisesList = ({ navigation }: NavigationProps) => {
       <FlatList
         data={listData}
         renderItem={renderItem}
-        contentContainerStyle={exercises.content}
+        contentContainerStyle={exercisesList.content}
         extraData={searchTextInput}
         keyExtractor={(item: Exercise) => item.id}
       />

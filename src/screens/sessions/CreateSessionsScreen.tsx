@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
-import { View, Text, Modal } from 'react-native';
+import { Text, FlatList } from 'react-native';
 import { Colors, FontSizes } from 'styles/variables';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import InputText from 'components/ui/inputs/InputText';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
-import { modalExercises } from 'styles';
-import ButtonIcon from 'components/ui/buttons/ButtonIcon';
-import { NavigationProps } from 'types/routes';
 import { LinearGradientBackground } from 'components/LinearGradientBackground';
 import { useTranslation } from 'react-i18next';
 import ButtonAddMenuAnimated from 'components/ui/buttons/ButtonAddMenuAnimated';
-import ExercisesList from 'components/exercises/ExercisesList';
+import { NavigationProps } from 'types';
+import ExerciseListModal from 'components/exercises/exercisesList/ExerciseListModal';
+import Card from 'components/ui/Card';
 
 const CreateSessionScreen = ({ navigation }: NavigationProps) => {
   const [showExercisesList, setShowExercisesList] = useState(false);
+  const [exercisesSelected, setExercisesSelected] = useState<string[]>([]);
   const { t } = useTranslation();
+
+  const renderItemSelected = ({ item }: any) => (
+    <Card>
+      <Text>{t(item)}</Text>
+    </Card>
+  );
+
   return (
     <LinearGradientBackground>
       <InputText
@@ -29,25 +35,18 @@ const CreateSessionScreen = ({ navigation }: NavigationProps) => {
           <SimpleLineIcons name="notebook" size={FontSizes.small} color={Colors.black_opacity_06} />
         }
       />
+      <FlatList data={exercisesSelected} renderItem={renderItemSelected} />
+
       <ButtonAddMenuAnimated onPress={() => setShowExercisesList(!showExercisesList)} />
-      <Modal animationType="slide" transparent={true} visible={showExercisesList}>
-        <View style={modalExercises.modalView}>
-          <View style={modalExercises.header}>
-            <Text style={modalExercises.title}>Ajouter exercices</Text>
-            <ButtonIcon
-              icon={<Ionicons name="close" size={24} color={Colors.black} />}
-              backgroundColor={Colors.white}
-              onPress={() => setShowExercisesList(!showExercisesList)}
-              colorPressable={Colors.whiteSmoke}
-              padding={5}
-              customContainer={modalExercises.buttonClose}
-            />
-          </View>
-          <View>
-            <ExercisesList navigation={navigation} />
-          </View>
-        </View>
-      </Modal>
+      {showExercisesList && (
+        <ExerciseListModal
+          exercisesSelected={exercisesSelected}
+          setExercisesSelected={setExercisesSelected}
+          setShowExercisesList={setShowExercisesList}
+          showExercisesList={showExercisesList}
+          navigation={navigation}
+        />
+      )}
     </LinearGradientBackground>
   );
 };
